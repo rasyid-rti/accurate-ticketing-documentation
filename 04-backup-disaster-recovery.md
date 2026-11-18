@@ -189,3 +189,40 @@ file sumber belum diverifikasi.
 
 Backup lampiran fisik tiket belum teridentifikasi
 dalam mekanisme backup otomatis yang diperiksa.
+
+## 10. Perlindungan Lampiran Tiket
+
+Tanggal pemeriksaan: 18 November 2026.
+
+Volume Production:
+accurate-ticketing-production_private_attachments
+
+Volume Staging:
+accurate-ticketing-staging_private_attachments
+
+Lokasi mount aplikasi:
+/var/www/html/storage/app/private
+
+### Hasil Pemeriksaan
+
+| Lingkungan | Ukuran | Jumlah File |
+|---|---|---:|
+| Production | 4.0 KB | 0 |
+| Staging | 4.0 KB | 0 |
+
+### Status Perlindungan
+
+Backup otomatis volume lampiran belum terverifikasi.
+
+Volume kosong pada saat pemeriksaan tidak menjamin
+volume akan tetap kosong setelah aplikasi digunakan.
+
+### Persyaratan
+
+- Backup lampiran Production harus disiapkan.
+- Backup lampiran dan database harus dapat dipulihkan
+  sebagai pasangan data yang konsisten.
+- Penyimpanan Production dan Staging tetap dipisahkan.
+- Restore lampiran harus diuji di lingkungan terisolasi.
+- Jangan menghapus atau mengganti volume Production
+  tanpa prosedur pemulihan yang disetujui.
